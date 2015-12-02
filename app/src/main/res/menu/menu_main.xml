@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item android:id="@+id/action_settings"
+        android:title="Top Scores"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/trophy"/>
+
+    <item android:id="@+id/action_settings2"
+        android:title="New Game"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+</menu>

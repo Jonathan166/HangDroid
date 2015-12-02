@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/imageView2"
+            android:background="@drawable/unnamed"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="italic"
+            android:text="Hang Droid"
+            android:id="@+id/textView"
+            android:layout_marginBottom="75dp"
+            android:textSize="38dp"
+            android:textColor="#711296"
+            android:typeface="monospace"
+            android:layout_weight="0.27"
+            android:autoText="false" />
+
+        <Button
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:text="Single Player"
+            android:id="@+id/button"
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonshape"
+            android:shadowRadius="6"
+            android:onClick="activityGame"
+            android:layout_marginBottom="10dp"
+            />
+
+        <Button
+            android:text="Multi-Player"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:id="@+id/button2"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/buttonshape"
+            android:onClick="startMultiPlayerGame"/>
+
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="High Scores"
+            android:id="@+id/button3"
+            android:background="@drawable/buttonshape"
+            android:layout_marginBottom="10dp"
+            android:onClick="openScores"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
