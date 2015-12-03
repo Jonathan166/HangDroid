@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get New Text"
+        android:id="@+id/button3"
+        android:layout_marginBottom="10dp"
+        android:onClick="setTextMessage"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="playMultiPlayerGame"
+        android:text="Play"
+        android:layout_below="@+id/editTextWord"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="textPassword"
+    android:ems="10"
+    android:id="@+id/editTextWord"
+    android:textAlignment="center"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:clickable="false"
+    android:cursorVisible="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    />
+
+</LinearLayout>

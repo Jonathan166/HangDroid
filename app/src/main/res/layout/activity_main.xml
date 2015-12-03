@@ -22,17 +22,16 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/imageView2"
-            android:background="@drawable/unnamed"
-            android:layout_gravity="center_horizontal" />
+            android:background="@drawable/unnamed" />
 
         <TextView
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="68dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="italic"
+            android:gravity="center_horizontal"
             android:text="Hang Droid"
             android:id="@+id/textView"
-            android:layout_marginBottom="75dp"
             android:textSize="38dp"
             android:textColor="#711296"
             android:typeface="monospace"
@@ -62,6 +61,17 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/buttonshape"
             android:onClick="startMultiPlayerGame"/>
+
+        <Button
+            android:text="Text Player"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:id="@+id/button4"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/buttonshape"
+            android:onClick="startTextPlayerGame"/>
 
         <Button
             android:layout_width="190dp"
