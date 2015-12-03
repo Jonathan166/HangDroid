@@ -29,7 +29,8 @@ public class IncomingSms extends BroadcastReceiver {
                 String format = bundle.getString("format");
 
                 for(int i = 0; i < pdus.length; i++){
-                    SmsMessage currentMessage = SmsMessage.createFromPdu((byte[]) pdus[0]);
+
+                    SmsMessage currentMessage = SmsMessage.createFromPdu((byte[])pdus[i]);
 
                     String phoneNumber = currentMessage.getDisplayOriginatingAddress();
 
