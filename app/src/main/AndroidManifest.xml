@@ -51,13 +51,16 @@
         <activity
             android:name=".ScoreActivity"
             android:label="@string/title_activity_scores"></activity>
+        <activity
+            android:name=".TextActivity"
+            android:label="@string/title_activity_text_player"></activity>
 
         <receiver
             android:name=".IncomingSms"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
         </receiver>
 
