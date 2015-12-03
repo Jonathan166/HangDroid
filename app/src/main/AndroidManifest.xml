@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="davinci.jlangf16.hangdroid" >
+    package="davinci.jlangf16.hangdroid">
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".SplashActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +23,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,32 +32,36 @@
         </activity>
         <activity
             android:name=".GameActivity"
-            android:label="@string/title_activity_game" >
-        </activity>
+            android:label="@string/title_activity_game"></activity>
         <activity
             android:name=".GameOver"
-            android:label="@string/title_activity_game_over" >
-        </activity>
+            android:label="@string/title_activity_game_over"></activity>
         <activity
             android:name=".GameWin"
-            android:label="@string/title_activity_game_win" >
-        </activity>
+            android:label="@string/title_activity_game_win"></activity>
         <activity
             android:name=".highScores"
-            android:label="@string/title_activity_high_scores" >
-        </activity>
+            android:label="@string/title_activity_high_scores"></activity>
         <activity
             android:name=".MultiPlayerActivity"
-            android:label="@string/title_activity_multi_player" >
-        </activity>
+            android:label="@string/title_activity_multi_player"></activity>
         <activity
             android:name=".GameMultiActivity"
-            android:label="@string/title_activity_multi_player" >
-        </activity>
+            android:label="@string/title_activity_multi_player"></activity>
         <activity
             android:name=".ScoreActivity"
-            android:label="@string/title_activity_scores" >
-        </activity>
+            android:label="@string/title_activity_scores"></activity>
+
+        <receiver
+            android:name=".IncomingSms"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>

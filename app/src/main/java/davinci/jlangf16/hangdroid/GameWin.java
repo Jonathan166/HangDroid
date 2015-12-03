@@ -38,7 +38,7 @@ public class GameWin extends ActionBarActivity {
         String previousScores = preferences.getString("SCORES", "");
 
         //key = scores, value = concatinated string
-        editor.putString("SCORES", name + " " + playerPoints + " POINTS\n" + previousScores);
+        editor.putString("SCORES", name + " " + playerPoints + " Points\n" + previousScores);
         //saves buffer
         editor.commit();
 
