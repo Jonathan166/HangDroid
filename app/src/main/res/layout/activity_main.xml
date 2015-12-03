@@ -22,7 +22,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/imageView2"
-            android:background="@drawable/unnamed"/>
+            android:background="@drawable/unnamed" />
 
         <TextView
             android:layout_width="250dp"
