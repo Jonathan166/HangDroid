@@ -22,21 +22,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //create fragment manager allows you to interact with a fragment in an activity
-        FragmentManager fragmentManager = getFragmentManager();
-        //create fragment transaction allows us to call method to manage the fragments
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        //set to change fragments on orientation - first get configuration information
-        Configuration configuration = getResources().getConfiguration();
-
-        if(configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
-            FragmentLandscape fragmentLandscape = new FragmentLandscape();
-            fragmentTransaction.replace(android.R.id.content, fragmentLandscape);
-        }else{
-            FragmentPortrait fragmentPortrait = new FragmentPortrait();
-            fragmentTransaction.replace(android.R.id.content, fragmentPortrait);
-        }
-
+        setContentView(R.layout.activity_main);
     }
 
     public void startSinglePlayerGame(View view){
