@@ -29,13 +29,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="__"
         android:id="@+id/textViewPoints"
         android:textSize="40dp"
         android:textColor="#fdfcfc"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toEndOf="@+id/button4" />
+        android:layout_below="@+id/editTextName"
+        android:layout_alignEnd="@+id/editTextName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +43,8 @@
         android:id="@+id/textView2"
         android:textSize="40dp"
         android:textColor="#fffdfd"
-        android:layout_marginTop="40dp" />
+        android:layout_below="@+id/editTextName"
+        android:layout_alignStart="@+id/editTextName" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,5 +53,6 @@
         android:id="@+id/textView4"
         android:textColor="#fcfafa"
         android:textSize="30dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
