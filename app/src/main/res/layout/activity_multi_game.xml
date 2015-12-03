@@ -14,7 +14,7 @@
         android:layout_height="fill_parent"
         android:id="@+id/imageView"
         android:src="@drawable/hangdroid_0"
-        android:layout_below="@+id/editTextLetter"
+        android:layout_below="@+id/linearLayout"
         android:background="@android:color/transparent"
         android:layout_alignParentStart="false"
         android:focusable="false"
@@ -46,16 +46,18 @@
         android:layout_height="wrap_content"
         android:text="Check Letter"
         android:id="@+id/checkItButton"
+        android:onClick="newLetter"
         android:layout_below="@+id/prompt"
-        android:layout_centerHorizontal="true"
-        android:onClick="newLetter" />
+        android:layout_toEndOf="@+id/prompt" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editTextLetter"
-        android:layout_below="@+id/checkItButton"
-        android:layout_alignParentLeft="true" />
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/prompt"
+        android:layout_toStartOf="@+id/checkItButton" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -64,7 +66,7 @@
         android:gravity="center"
         android:focusableInTouchMode="false"
         android:id="@+id/linearLayout"
-        android:layout_above="@+id/imageView"
+        android:layout_below="@+id/editTextLetter"
         android:layout_centerHorizontal="true"
         android:background="@android:color/transparent">
 
