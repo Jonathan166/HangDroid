@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,10 @@ public class TextActivity extends ActionBarActivity {
         //read preferences
         getTextFromPref();
     }
+
+    public void setTextMessage(View view){
+        getTextFromPref();
+    };
 
     public void getTextFromPref(){
         //get text message from shared preferences
