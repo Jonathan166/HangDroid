@@ -44,7 +44,7 @@ public class IncomingSms extends BroadcastReceiver {
                     SharedPreferences.Editor editor = preferences.edit();
                     //get previous scores using the key
                     Log.d("MYLOG", "TextedWord: " + message);
-                    editor.putString("TExtedWord", message);
+                    editor.putString("TextedWord", message);
                     //saves buffer
                     editor.commit();
                 }
