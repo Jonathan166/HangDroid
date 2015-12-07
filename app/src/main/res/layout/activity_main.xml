@@ -25,17 +25,16 @@
             android:background="@drawable/unnamed" />
 
         <TextView
-            android:layout_width="250dp"
+            android:layout_width="412dp"
             android:layout_height="68dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="italic"
             android:gravity="center_horizontal"
-            android:text="Hang Droid"
+            android:text="Android VS. Apple"
             android:id="@+id/textView"
-            android:textSize="38dp"
+            android:textSize="30dp"
             android:textColor="#711296"
             android:typeface="monospace"
-            android:layout_weight="0.27"
             android:autoText="false" />
 
         <Button
