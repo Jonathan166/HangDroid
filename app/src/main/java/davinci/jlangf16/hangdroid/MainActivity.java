@@ -37,6 +37,12 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void startTextPlayerGame(View view){
+        //explicit intent sends a message to start an activity
+        Intent intent = new Intent(this, TextActivity.class);
+        startActivity(intent);
+    }
+
     public void openScores(View view) {
         //update scores xml
         Intent intent = new Intent(this, ScoreActivity.class);

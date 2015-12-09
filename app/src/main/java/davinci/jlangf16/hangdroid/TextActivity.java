@@ -1,5 +1,6 @@
 package davinci.jlangf16.hangdroid;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -17,7 +18,7 @@ public class TextActivity extends ActionBarActivity {
     private String textWord;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
         //get text message from shared preferences
@@ -28,7 +29,7 @@ public class TextActivity extends ActionBarActivity {
 
     public void setTextMessage(View view){
         getTextFromPref();
-    };
+    }
 
     public void getTextFromPref(){
         //get text message from shared preferences
@@ -40,10 +41,35 @@ public class TextActivity extends ActionBarActivity {
             textWord = "";
             Toast.makeText(this, "No Text Received", Toast.LENGTH_LONG).show();
         }
-        Log.d("MYLOG", "Texted Word: " + textWord);
+        Log.d("MYOG", "Texted Word: " + textWord);
 
         //put texted word in textview
         textView = (TextView) findViewById(R.id.editTextWord);
         textView.setText(textWord);
     }
+
+    //play button
+    public void playMultiPlayerGame(View view){
+        //connect to XML
+        //get word and cast word to a String
+        String textWord = textView.getText().toString();
+        if(textWord.length() > 0){
+            //clear field for the next word
+            textView.setText("");
+            //clear word from sharedPreferences
+            preferences.edit().remove("TextedWord").apply();
+            Log.d("MYLOG", "Removed Texted Word: " + textView);
+            //create intent
+            Intent intent = new Intent(this, GameMultiActivity.class);
+            //send word with intent
+            intent.putExtra("GUESS_WORD", textWord);
+            //intent.putExtra("GUESS_WORD", wordToGuess);
+            //start activity
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(this, "No Word Found - Try GET NEW TEXT", Toast.LENGTH_LONG).show();
+        }
+    }
+
 }
