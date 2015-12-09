@@ -1,5 +1,6 @@
 package davinci.jlangf16.hangdroid;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ public class TextActivity extends ActionBarActivity {
     private SharedPreferences preferences;
     private TextView textView;
     private String textWord;
+    private String friendPhone;
+    private String texterPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,9 @@ public class TextActivity extends ActionBarActivity {
         setContentView(R.layout.activity_text);
         //get text message from shared preferences
         preferences = getSharedPreferences("TEXT_MSGS", MODE_PRIVATE);
+        friendPhone = getIntent().getStringExtra("Phone");
+
+        Log.d("MYLOG", "Friend: " + friendPhone);
         //read preferences
         getTextFromPref();
     }
@@ -36,16 +42,43 @@ public class TextActivity extends ActionBarActivity {
         //preferences = getSharedPreferences("TEXT_MSGS", MODE_PRIVATE);
         //read preferences
         textWord = preferences.getString("TextedWord", "NO WORD"); //NO WORD if preferences not found
-        //get the textview for texted word
+        texterPhone = preferences.getString("TexterPhone", "NO PHONE");
+        textView = (TextView) findViewById(R.id.editTextWord);
+
+        boolean phone = true;
+        boolean word = true;
+        boolean friend = true;
+
         if(textWord == "NO WORD"){
+            word = false;
+        }
+        if(texterPhone == "NO PHONE"){
+            phone = false;
+        }
+        if(friendPhone == null){
+            friend = false;
+        }
+
+        //word but no friend selected
+        if(!friend && word){
+            textView.setText(textWord);
             textWord = "";
+            texterPhone = "";
+            return;
+        }
+        if(phone && word){
+            if(friendPhone.equals(texterPhone)){
+                textView.setText(textWord);
+                textWord = "";
+                texterPhone = "";
+            }else{
+                Toast.makeText(this, "No Text from Selected Friend", Toast.LENGTH_LONG).show();
+            }
+            return;
+        }
+        if(!word){
             Toast.makeText(this, "No Text Received", Toast.LENGTH_LONG).show();
         }
-        Log.d("MYOG", "Texted Word: " + textWord);
-
-        //put texted word in textview
-        textView = (TextView) findViewById(R.id.editTextWord);
-        textView.setText(textWord);
     }
 
     //play button

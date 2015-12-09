@@ -46,6 +46,7 @@ public class IncomingSms extends BroadcastReceiver {
                     SharedPreferences.Editor editor = preferences.edit();
                     Log.d("MYLOG", "TextedWord: " + message);
                     editor.putString("TextedWord", message);
+                    editor.putString("TexterPhone", phoneNumber);
                     editor.commit();
                 }
             }

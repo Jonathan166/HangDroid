@@ -9,5 +9,6 @@
     <string name="title_activity_text_player">TextActivity</string>
     <string name="title_activity_scores">Scores</string>
     <string name="title_activity_text">TextActivity</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
 
 </resources>
