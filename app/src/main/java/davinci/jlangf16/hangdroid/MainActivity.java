@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
+    int backButtonCount = 0;
+
     public void activityGame(View view){
         Toast.makeText(getBaseContext(), "You clicked on Single Player", Toast.LENGTH_LONG) .show();
         Intent intent = new Intent(this, GameActivity.class);
@@ -48,10 +50,23 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, ScoreActivity.class);
         startActivity(intent);
     }
-        @Override
-        public void onBackPressed(){
-            Toast.makeText(this, "You can't go back.", Toast.LENGTH_SHORT).show();
+
+    @Override
+    public void onBackPressed()
+    {
+        if(backButtonCount >= 1)
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
+        else
+        {
+            Toast.makeText(this, "Press the back button once again to close the application.", Toast.LENGTH_SHORT).show();
+            backButtonCount++;
+        }
+    }
 
 
     @Override
