@@ -48,7 +48,7 @@
             android:label="Multi Player" />
         <activity
             android:name=".GameMultiActivity"
-            android:label="Multi Player Activity" />
+            android:label="Multi Player" />
         <activity
             android:name=".TextActivity"
             android:label="Text Player" />
