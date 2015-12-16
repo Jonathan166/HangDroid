@@ -132,5 +132,4 @@ public class TextActivity extends ActionBarActivity {
             Toast.makeText(this, "No Word Found - Try GET NEW TEXT", Toast.LENGTH_LONG).show();
         }
     }
-
 }
